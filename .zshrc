@@ -3,9 +3,10 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$PATH:/usr/sbin:${KREW_ROOT:-$HOME/.krew}/bin:/opt/roc:$NPM_PACKAGES/bin"
 
-export PATH="$PATH:/usr/sbin:${KREW_ROOT:-$HOME/.krew}/bin:/opt/roc"
-
+export EDITOR=nvim
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -74,8 +75,8 @@ ZSH_THEME="norm"
 # Add wisely, as too many plugins slow down shell startup.
 
 alias dc=docker-compose
-
-plugins=(git kubectl-autocomplete kubectl dotnet)
+alias vim=nvim
+plugins=(kubectl-autocomplete kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

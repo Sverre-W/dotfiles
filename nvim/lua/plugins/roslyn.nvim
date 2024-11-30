@@ -2,7 +2,10 @@ return {
   "seblj/roslyn.nvim",
   ft = "cs",
   opts = {
-    filewatching = true,
+    exe = {
+      "dotnet",
+      vim.fs.joinpath("/home/sverre/.local/share/lunarvim", "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+    },
     config = {
       settings = {
         ["csharp|background_analysis"] = {

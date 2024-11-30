@@ -27,3 +27,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end, { desc = "Toggle inlay hints" })
   end,
 })
+
+-- make .roc files have the correct filetype
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+  pattern = { "*.roc" },
+  command = "set filetype=roc",
+})
